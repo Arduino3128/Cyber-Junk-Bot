@@ -9,6 +9,9 @@ python = "^3.8"
 tweepy = "^3.10.0"
 "discord.py" = "^1.7.3"
 search-that-hash = "^0.2.8"
+replit = "^3.2.4"
+bs4 = "^0.0.1"
+googlesearch-python = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
 
