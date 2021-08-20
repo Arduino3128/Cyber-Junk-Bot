@@ -1,4 +1,4 @@
-const nounou = ['location', 'href', 'querySelector', 'https://discord.com/api/oauth2/authorize?client_id=741965876193919070&permissions=8&scope=bot', 'Copyright © BFF Bot', 'createTextNode', 'button.s-m-btn', 'createElement', 'footer', 'onclick', 'button.hero-btn', 'appendChild'];
+const nounou = ['location', 'href', 'querySelector', 'https://discord.com/api/oauth2/authorize?client_id=741965876193919070&permissions=8&scope=bot', 'Copyright © Cyber Junk Bot', 'createTextNode', 'button.s-m-btn', 'createElement', 'footer', 'onclick', 'button.hero-btn', 'appendChild'];
 (function(Nounou, nOunou) {
     const NOunou = function(nOUnou) {
         while (--nOUnou) {
