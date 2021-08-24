@@ -26,8 +26,10 @@ class Twitter(commands.Cog):
 			tweet=tweet
 		await ctx.send(content="https://twitter.com/i/web/status/"+str(tweet.id))
 	
-	@commands.command(name="twitter", help="Format:- >twitter follow/unfollow <Username>")
+	@commands.command(name="twitter", help="Format:- $twitter follow/unfollow <Username>")
 	async def twitter_processor(self,ctx,action,who):
+		if "@" in who:
+			who=who.replace("@","")
 		if action=="follow":
 			try:
 				api.lookup_users(screen_name=who)
@@ -46,6 +48,7 @@ class Twitter(commands.Cog):
 		for user in users:
 			tweets=tweepy.Cursor(api.user_timeline,
 			screen_name=user,
+			exclude_replies=True,
 			lang="en",
 			since=str(date.today())).items(1)
 			for tweet in tweets:
@@ -54,7 +57,7 @@ class Twitter(commands.Cog):
 			if str(tweet.id)==str(db[user]):
 				pass
 			else:
-				channel=self.bot.get_channel(859479104860717097)
+				channel=self.bot.get_channel(863442157343342658)
 				await channel.send(content=f'@{temp["user"].__dict__["_json"]["name"]} Tweeted:\nhttps://twitter.com/i/web/status/{str(tweet.id)}')
 				db[user]=str(tweet.id)
 

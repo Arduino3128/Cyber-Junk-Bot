@@ -1,8 +1,9 @@
 Hello! I am Cyber Junk bot :robot:
 
-Get Tweet alerts from you favourite Cybersec Expert.
+Get Tweet alerts from you favorite Cybersec Expert.
+Play Games.
 
-To get help use `>help`.
+To get help use `$help`.
 
 
 I am developed by Kanad Nemade
