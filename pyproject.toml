@@ -11,7 +11,8 @@ tweepy = "^3.10.0"
 search-that-hash = "^0.2.8"
 replit = "^3.2.4"
 bs4 = "^0.0.1"
-googlesearch-python = "^1.0.1"
+Flask = "^2.0.1"
+google = "^3.0.0"
 
 [tool.poetry.dev-dependencies]
 

@@ -1,9 +1,10 @@
 import discord, search_that_hash,tweepy
 from discord.ext import commands
+from keep_alive import keep_alive
 import json
 import os
 
-bot = commands.Bot(command_prefix='>')
+bot = commands.Bot(command_prefix='$')
 
 @bot.event
 async def on_ready():
@@ -21,7 +22,7 @@ async def on_ready():
 @bot.event
 async def on_guild_join(guild):
 	for channel in guild.channels:
-			if str(channel)=='announcements':
+			if 'announcements' in str(channel):
 				channel_id=int(channel.id)
 				break
 	print(channel_id)
@@ -30,4 +31,5 @@ async def on_guild_join(guild):
 	embed.set_footer(text="I am developed by Kanad Nemade")
 	await channel.send(embed=embed)
 
+keep_alive()
 bot.run(os.environ['DISCORD_TOKEN'])

@@ -177,16 +177,15 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
-name = "googlesearch-python"
-version = "1.0.1"
-description = "A Python library for scraping the Google search engine."
+name = "google"
+version = "3.0.0"
+description = "Python bindings to the Google search engine."
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = "*"
 
 [package.dependencies]
-beautifulsoup4 = "4.9.3"
-requests = "2.25.1"
+beautifulsoup4 = "*"
 
 [[package]]
 name = "humanfriendly"
@@ -512,7 +511,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "723bdde11b99741b87cfef09d9d49f168403ca7ee02656e7ebe0be1b3d55469a"
+content-hash = "476643f5e091f154a40b48e543fdb4f2f6852537d024c103275a6848f36bd98c"
 
 [metadata.files]
 aiohttp = [
@@ -610,9 +609,9 @@ flask = [
     {file = "Flask-2.0.1-py3-none-any.whl", hash = "sha256:a6209ca15eb63fc9385f38e452704113d679511d9574d09b2cf9183ae7d20dc9"},
     {file = "Flask-2.0.1.tar.gz", hash = "sha256:1c4c257b1892aec1398784c63791cbaa43062f1f7aeb555c4da961b20ee68f55"},
 ]
-googlesearch-python = [
-    {file = "googlesearch-python-1.0.1.tar.gz", hash = "sha256:4392d99ec0bff58eb2b6074f34559462c5b99a31886d48d81e3ed414163e281b"},
-    {file = "googlesearch_python-1.0.1-py3-none-any.whl", hash = "sha256:1e1286941a1ea029de4cf7b56a5151ef85324e288e9b41c2c3b81bb945b44427"},
+google = [
+    {file = "google-3.0.0-py2.py3-none-any.whl", hash = "sha256:889cf695f84e4ae2c55fbc0cfdaf4c1e729417fa52ab1db0485202ba173e4935"},
+    {file = "google-3.0.0.tar.gz", hash = "sha256:143530122ee5130509ad5e989f0512f7cb218b2d4eddbafbad40fd10e8d8ccbe"},
 ]
 humanfriendly = [
     {file = "humanfriendly-9.2-py2.py3-none-any.whl", hash = "sha256:332da98c24cc150efcc91b5508b19115209272bfdf4b0764a56795932f854271"},
