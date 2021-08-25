@@ -6,7 +6,7 @@ class Delete(commands.Cog):
 		self.bot=bot
 
 	@commands.command(name="delete", help="Only for Moderators and Admins.")
-	@commands.has_permissions(ban_members=True)
+	@commands.has_permissions(kick_members=True)
 	async def deletechats(self,ctx, limit):
 		async for msg in ctx.message.channel.history(limit=int(limit)+1):
 			try:
