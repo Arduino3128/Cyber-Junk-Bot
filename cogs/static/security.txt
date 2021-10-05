@@ -1,0 +1,4 @@
+Contact: https://github.com/Arduino3128/
+Expires: 2025-09-19T18:30:00.000Z
+Preferred-Languages: en
+Policy: https://bot.cyberjunk.co/policy.txt

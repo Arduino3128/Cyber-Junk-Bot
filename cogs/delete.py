@@ -13,6 +13,8 @@ class Delete(commands.Cog):
 				await msg.delete()
 			except:
 				pass
-
+	@deletechats.error
+	async def kick_error(ctx, error):
+		pass
 def setup(bot):
 	bot.add_cog(Delete(bot))
