@@ -2,7 +2,6 @@ from discord.ext import commands,tasks
 import discord
 import os
 import tweepy
-import pymongo
 from pymongo import MongoClient
 from datetime import date
 
@@ -29,7 +28,8 @@ class Twitter(commands.Cog):
         	      since=str(date.today())).items(1)
 			for tweet in tweets:
 				tweet=tweet
-			await ctx.send(content="https://twitter.com/i/web/status/"+str(tweet.id))
+			tweet=tweet.__dict__['_json']
+			await ctx.send(content=f"https://twitter.com/{str(tweet['user']['screen_name'])}/status/{str(tweet['id'])}")
 		except:
 			pass
 
@@ -75,7 +75,7 @@ class Twitter(commands.Cog):
 					pass
 				else:
 					channel=self.bot.get_channel(863442157343342658)
-					await channel.send(content=f'@{temp["user"].__dict__["_json"]["name"]} Tweeted:\nhttps://twitter.com/i/web/status/{str(tweet.id)}')
+					await channel.send(content=f'@{temp["user"].__dict__["_json"]["name"]} Tweeted:\nhttps://twitter.com/{str(temp["user"].__dict__["_json"]["screen_name"])}/status/{str(tweet.id)}')
 					Collection.update_one({"Username":user['Username']},{"$set":{"ID":str(tweet.id)}})
 		except:
 			pass
