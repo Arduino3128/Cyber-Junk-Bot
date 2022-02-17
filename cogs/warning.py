@@ -9,7 +9,10 @@ class Warning(commands.Cog):
 	@commands.has_permissions(kick_members=True)
 	async def warn(self,ctx,who,reason=""):
 		try:
-			await ctx.send(content=f":warning: Warned {who}\n Reason: {reason}")
+			if reason!="":
+				await ctx.send(content=f":warning: Warned {who}\n Reason: {reason}")
+			else:
+				await ctx.send(content=f":warning: Warned {who}")
 		except:
 			await ctx.send(content="Format: $warn <Mention_User> <Reason>")
 

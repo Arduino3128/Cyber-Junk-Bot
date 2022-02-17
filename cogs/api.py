@@ -37,7 +37,7 @@ class API(commands.Cog):
 					if (await request.form)['Type']=="SendMsg":
 						message =  (await request.form)['Message']
 						channel_id = (await request.form)['Channel_ID']
-						channel=bot.get_channel(int(channel_id))
+						channel=await bot.fetch_channel(int(channel_id))
 						if channel != None:
 							await channel.send(content=f"{message}")
 							return "OK"

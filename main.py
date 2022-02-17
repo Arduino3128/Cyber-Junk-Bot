@@ -8,10 +8,10 @@ bot = commands.Bot(command_prefix='$', intents = discord.Intents.all())
 @bot.event
 async def on_member_join(member):
 	guild = bot.get_guild(863434765327138836)
-	if (int(guild.member_count)-5) == 1000:
+	if (int(guild.member_count)-7) == 1000:
 		channel = bot.get_channel(863434765327138843)
-		await channel.send(content="""Woohoo!🎉\n🎊We have reached 1000 members on Discord!🎊\nThank You All!""",file=discord.File('./static/500.png'))
-
+		await channel.send(content="""Woohoo!🎉\n🎊We have reached 1000 members on Discord!🎊\nThank You All!""",file=discord.File('cogs/static/1000.gif'))
+	
 @bot.event
 async def on_ready():
 	with open("config/cogs.json",'r') as config:
