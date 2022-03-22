@@ -71,7 +71,7 @@ class Twitter(commands.Cog):
 				for tweet in tweets:
 					tweet=tweet
 					temp=tweet.__dict__
-				if str(tweet.id)==str(user["ID"]):
+				if (str(tweet.id)==str(user["ID"]) or temp['_json']['text'][0:4]=="RT @"):
 					pass
 				else:
 					channel=self.bot.get_channel(863442157343342658)

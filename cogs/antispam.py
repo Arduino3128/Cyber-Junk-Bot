@@ -2,6 +2,7 @@ from discord.ext import commands
 import requests,re
 import discord
 import json
+import os
 
 class AntiSpam(commands.Cog):
 	def __init__(self, bot):
@@ -43,12 +44,19 @@ class AntiSpam(commands.Cog):
 							counter=4
 					except Exception as ERROR:
 						print(ERROR)
+						API_key = os.environ['VIRUSTOTAL_API']
+						parameters = {"apikey": API_key, "resource": url}
+						response = requests.get(url="https://www.virustotal.com/vtapi/v2/url/report", params=parameters)
+						json_response = json.loads(response.text)
+						if json_response["positives"] > 5:
+							counter=4
 				spams=self.phish_words['phish_words']
 				msg_cont=message.content
 				if "@everyone" in msg_cont:
 					counter+=1
 				for x in spams:
 					if x in text:
+						print(x)
 						if "Nitro" in x or "Nitrо" in x:
 							counter+=1
 						print("Scam word detected: ", x)
@@ -60,6 +68,8 @@ class AntiSpam(commands.Cog):
 						black_list.write("\n\n"+str(message.content)+"------->"+str(author)+"-->"+str(message.author.id))
 				except Exception as ERROR:
 					print(ERROR)
+				#text_message="This message has been deleted as it contains a link to a potential phishing website.\nIf you think this was a false detection, please message KanadNemade."
+				#await message.reply(content=text_message)
 				await message.delete()
 				try:
 					#print(f"TYPE OF DB: {type(self.phish_db)} and data is: {self.phish_db}")
